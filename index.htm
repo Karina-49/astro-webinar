@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="астрология, гороскопы, вебинар, космос">
+    <title>Регистрация на Астрологический Вебинар</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Регистрация на Астрологический Вебинар</h1>
+        <h1>"Путеводитель по Звёздам"</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">О вебинаре</a></li>
+                <li><a href="#registration">Регистрация</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>О вебинаре</h2>
+            <p>
+                Присоединяйтесь к нашему астрологическому вебинару!  
+                Вы узнаете, как звезды и планеты влияют на вашу жизнь.  
+            </p>
+            <p>
+                Мы разберем ключевые астрологические техники:  
+                как составлять натальную карту,  
+                делать прогнозы по знакам Зодиака  
+                и применять астрологию в повседневной жизни.  
+            </p>
+            <div class="spacer"></div>
+            <h3>Что вас ждет:</h3>
+        <ul class="no-markers centered-list">
+            <li><span class="number">1</span> Как вычислить свой гороскоп по дате рождения.</li>
+            <li><span class="number">2</span> Влияние планет и домов на личную жизнь.</li>
+            <li><span class="number">3</span> Как использовать астрологию для карьерного роста.</li>
+            <li><span class="number">4</span> Тайны влияния Лунных фаз на повседневные события.</li>
+        </ul>
+        <div class="spacer"></div>
+            <p>
+                На примере ваших знаков Зодиака и натальных карт  
+                мы разберем, как планеты и их аспекты  
+                формируют вашу судьбу.  
+            </p>
+            <p>
+                Разберем реальные примеры,  
+                разложим сложные темы по полочкам  
+                и ответим на ваши вопросы!  
+            </p>
+        </section>
+    
+
+        <section id="registration">
+            <h2>Запишитесь на вебинар</h2>
+            <form id="registrationForm">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email для связи:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="birthdate">Дата рождения:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+
+                <label for="birthplace">Место рождения:</label>
+                <input type="text" id="birthplace" name="birthplace" required>
+
+                <label for="zodiac">Каким знаком Зодиака вы себя чувствуете?</label>
+                <select id="zodiac" name="zodiac">
+                    <option value="aries">Овен</option>
+                    <option value="taurus">Телец</option>
+                    <option value="gemini">Близнецы</option>
+                    <option value="cancer">Рак</option>
+                    <option value="leo">Лев</option>
+                    <option value="virgo">Дева</option>
+                    <option value="libra">Весы</option>
+                    <option value="scorpio">Скорпион</option>
+                    <option value="sagittarius">Стрелец</option>
+                    <option value="capricorn">Козерог</option>
+                    <option value="aquarius">Водолей</option>
+                    <option value="pisces">Рыбы</option>
+                </select>
+
+                <label>
+                    <input type="checkbox" name="terms" required> Я согласен с&nbsp;
+                    <a href="https://cdn1.tenchat.ru/static/vbc-gostinder/2023-06-19/f96dca52-46ae-4ded-8700-182c0d2c460d.jpg" target="_blank" class="terms-link">условиями</a>
+                </label>
+                
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+            <div id="errorMessage" style="color: red; display: none;"></div> <!-- Ошибка -->
+        </section>
+
+        <section id="gallery">
+            <h2>Галерея астрологических карт</h2>
+            <div class="gallery-container">
+                <img src="02.jpg" alt="Большое изображение" class="large-image">
+                <div class="small-images">
+                    <img src="01.jpg" alt="Маленькое изображение 1" class="small-image">
+                    <img src="03.jpg" alt="Маленькое изображение 2" class="small-image">
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 50px;">
+                <a href="https://t.me/mr_batsuev/1592" target="_blank" style="text-decoration: none; color: inherit;">
+                    *Выдохнула, закрыла ноутбук и с чувством победителя сказала... //тыкни сюда *
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="javascript.js"></script>
+
+
+</body>
+</html>
