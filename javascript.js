@@ -1,35 +1,30 @@
-document.querySelector('form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Предотвращаем стандартное поведение формы
+const { google } = require('googleapis');
+const readline = require('readline');
+const fs = require('fs');
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const birthdate = document.getElementById('birthdate').value;
-    const birthplace = document.getElementById('birthplace').value;
-    const zodiac = document.getElementById('zodiac').value;
+// Установите API ключ
+const API_KEY = 'AIzaSyDfeB09Nb9XbESNAi5nbhsRDG02qyMeTM0';
 
-    const errorMessage = document.getElementById('errorMessage');
-    errorMessage.style.display = 'none'; // Скрыть ошибку, если форма валидна
+// Подключаемся к Google Sheets API
+const sheets = google.sheets({ version: 'v4', auth: API_KEY });
 
-    if (!name || !email || !birthdate || !birthplace || !zodiac) {
-        errorMessage.textContent = 'Пожалуйста, заполните все поля!';
-        errorMessage.style.display = 'block';
-        return;
-    }
+// Идентификатор таблицы Google Sheets (ID таблицы можно найти в URL)
+const spreadsheetId = 'ВАШ_ID_ТАБЛИЦЫ';
 
-    try {
-        const response = await fetch('http://localhost:5000/register', {  // Порт должен быть 5000, как у тебя в сервере
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, birthdate, birthplace, zodiac })
-        });
-
-        if (response.ok) {
-            alert('Спасибо за регистрацию! Ваши данные записаны.');
-        } else {
-            alert('Ошибка при отправке данных.');
-        }
-    } catch (error) {
-        console.error('Ошибка:', error);
-        alert('Не удалось связаться с сервером.');
-    }
-});
+async function appendDataToSheet(data) {
+  try {
+    const response = await sheets.spreadsheets.values.append({
+      spreadsheetId: spreadsheetId,
+      range: 'Sheet1!A1', // Укажи диапазон в котором будут данные
+      valueInputOption: 'RAW', // Указываем формат ввода данных
+      resource: {
+        values: [
+          data, // Данные для записи в таблицу
+        ],
+      },
+    });
+    console.log('Данные успешно записаны:', response.data);
+  } catch (error) {
+    console.error('Ошибка при записи в таблицу:', error);
+  }
+};

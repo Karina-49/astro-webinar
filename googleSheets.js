@@ -28,4 +28,3 @@ async function appendDataToSheet(data) {
     console.error('Ошибка при записи в таблицу:', error);
   }
 }
-

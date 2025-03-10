@@ -10,11 +10,11 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const PORT = 5000; // Порт для сервера
+const PORT = process.env.PORT || 5000; // Используем порт, предоставляемый Vercel или локально 5000
 
 // Авторизация с использованием сервисного аккаунта
 const auth = new google.auth.GoogleAuth({
-  keyFile: "credentials.json",
+  keyFile: "credentials.json", // Вместо этого можно загрузить JSON ключ через переменные окружения в Vercel
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 
@@ -55,5 +55,5 @@ app.post("/register", async (req, res) => {
 
 // Запуск сервера
 app.listen(PORT, () => {
-  console.log(`Сервер запущен на http://localhost:5000`);
+  console.log(`Сервер запущен на http://localhost:${PORT}`);
 });

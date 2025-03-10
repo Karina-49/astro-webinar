@@ -55,8 +55,6 @@ main {
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
-    
-    
 }
 
 /* Стили для формы */
@@ -104,7 +102,6 @@ button {
 button:hover {
     background: #6e4b94;
 }
-
 
 label {
     display: inline-flex; /* Чтобы на одной строке был флажок и текст */
@@ -165,7 +162,6 @@ html {
 
 section {
     scroll-margin-top: 220px;
-    
 }
 
 p {
@@ -179,7 +175,6 @@ ul.no-markers {
     padding: 0;
     margin: 0;
 }
-
 
 .terms-link {
     color: inherit; /* Сохраняем цвет текста, чтобы не изменился */
@@ -214,4 +209,3 @@ ul.no-markers {
 .spacer {
     height: 30px;
 }
-
